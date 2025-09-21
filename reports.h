@@ -7,7 +7,15 @@
 #ifndef REPORTS_H
 #define REPORTS_H
 
-//insert reports file here
+
+//Function Stubs
+void repListing(){}
+void repWholesale(){}
+void repRetail(){}
+void repQuantity(){}
+void repCost(){}
+void repAge(){}
+
 
 
 

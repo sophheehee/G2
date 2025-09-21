@@ -7,7 +7,11 @@
 #ifndef INVMENU_H
 #define INVMENU_H
 
-// insert inventory menu
+//Function stubs 
+void lookUpBook(){}
+void addBook(){}
+void editBook(){}
+void deleteBook(){}
 
 
 
