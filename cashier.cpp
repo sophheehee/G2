@@ -10,7 +10,7 @@ and printing full receipt with calculated subtotal and taxed total
 #include <iostream>
 #include <iomanip>
 #include <string>
-
+#include "cashier.h"
 using namespace std;
 
 //prototype for helper functions

@@ -5,7 +5,8 @@
 * Purpose: Main Menu Driver for Bookseller program
 *****************************************************/
 #include <iostream>
-//#include "invmenu.h"
+#include "cashier.h"
+#include "invmenu.h"
 #include "reports.h"
 using namespace std; 
 
@@ -31,10 +32,12 @@ int main(){
 		//Menu Choice 
 		switch(choice){
 		case 1:
-			//cashier()
+			clear(); 
+			//cashier();
 			break; 
 		case 2: 
-			//invMenu(); 
+			clear(); 
+			invMenu(); 
 			break; 
 		case 3:
 			clear(); 

@@ -162,7 +162,7 @@ do{
 		case 7:
 			break; //exits loop & returns to main menu
 		default:
-			cout << "Your choice is invalid. Please enter a choice from 1-4.";
+			cout << "Your choice is invalid. Please enter a choice from 1-7.";
 			 cin.get(); // pauses so message is seen 
 
 		}
@@ -170,7 +170,8 @@ do{
 		if (choice !=7) {
 			cout <<"\n\nPress Enter to Continue..."; 
 			cin.ignore(); 
-			cin.get(); // pause again before clearing 
+			cin.get(); // pause again before clearing
+			cout << "\033[H\033[2J";
 		}
 
 	} while (choice != 7); 

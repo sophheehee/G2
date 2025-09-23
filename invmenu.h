@@ -8,11 +8,16 @@
 #ifndef INVMENU_H
 #define INVMENU_H
 
+//Inventory Menu Function Stubs
+void displayInvHeader(); 
+void displayInvList(); 
+void invMenu(); 
+
 //Function stubs 
-void lookUpBook(){}
-void addBook(){}
-void editBook(){}
-void deleteBook(){}
+void lookUpBook();
+void addBook();
+void editBook();
+void deleteBook();
 
 
 
