@@ -4,6 +4,7 @@
 *
 *
 ****************************************/
+<<<<<<< HEAD
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -106,5 +107,10 @@ float calcTot(int qty, float price, float &sub) {
 	return sub + (sub * 0.06); //returns the calculated total with 6% sales tax
 
 }
+=======
+#include <iostream> 
+#include "reports.h"
+using namespace std; 
+>>>>>>> 9a41b28 (Reports merge error)
 
 
