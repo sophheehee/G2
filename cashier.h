@@ -10,10 +10,10 @@ Purpose: Cashier Function Stubs
 #include <string> 
 
 //Function Prototype for Cashier Main
-//int cashier(); 
+int cashier(); 
 //prototypes for helper functions
-//void printRecipt(string, string, int, string, float, float, float);
-//float calcTot(int, float, float&);
+void printRecipt(string, string, int, string, float, float, float);
+float calcTot(int, float, float&);
 
 
 #endif

@@ -13,10 +13,6 @@ and printing full receipt with calculated subtotal and taxed total
 #include "cashier.h"
 using namespace std;
 
-//prototype for helper functions
-void printRecipt(string, string, int, string, float, float, float);
-float calcTot(int, float, float&);
-
 int main() {
 
 	string dte = ""; //user entered date
