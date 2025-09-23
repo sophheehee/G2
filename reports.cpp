@@ -1,10 +1,10 @@
-/**************************************
-* 
-*
-*
-*
-****************************************/
-<<<<<<< HEAD
+/*************************************************
+* Programmer: Christian Schoffstoll & Sophia Omar
+* Assignment: G2 -- Serendipity Menus
+* Due Date: 23 September 2025
+* Purpose: Report Printing & Header/Menu Functions
+**************************************************/
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -15,7 +15,8 @@ using namespace std;
 void printRecipt(string, string, int, string, float, float, float);
 float calcTot(int, float, float&);
 
-int main() {
+
+int mainReports() {
 
 	string dte = ""; //user entered date
 	int qty = 0; //number of copies being purchased
@@ -54,7 +55,7 @@ int main() {
 }
 /******************* printRecipt() **************************
 Definition: Accepts a string for the date, string for the 
-book's title, integer for ammount of book, string for book's 
+book's title, integer for amount of book, string for book's 
 ISBN, float for book's base price, float for subtotal of 
 purchase, and a float for the total cost
 
@@ -88,7 +89,7 @@ void printRecipt(string date, string title, int qty, string isbn, float price, f
 }
 
 /******************* calcTot() *******************
-Definition: Accepts an integer for the ammount of
+Definition: Accepts an integer for the amount of
 an item being purchased, float for the price of
 item, and pass by referrance float to uptade
 value of subtotal in main
@@ -101,16 +102,89 @@ tax, and saves subtotal value for later use
 
 float calcTot(int qty, float price, float &sub) {
 
-	//multiplies price of item by ammount of item and stores value in subtotal variable
+	//multiplies price of item by amount of item and stores value in subtotal variable
 	sub = qty * price;
 
 	return sub + (sub * 0.06); //returns the calculated total with 6% sales tax
 
 }
-=======
-#include <iostream> 
-#include "reports.h"
-using namespace std; 
->>>>>>> 9a41b28 (Reports merge error)
+
+//Function Definitions for Menu and Header (Sophie)
+void displayRepList(){
+	cout <<"What would you like to do?\n";
+	cout << "1. Inventory Listing\n"; 
+	cout << "2. Inventory Wholesale\n"; 
+	cout << "3. Inventory Retail Value\n";
+	cout << "4. Listing by Quantity\n";
+	cout << "5. Listing by Cost\n"; 
+	cout << "6. Listing by Age\n";
+	cout << "7. Return to Main Menu\n\n"; 
+	cout << "Enter Your Choice (1-7): "; 
+
+}
+void displayRepHeader(){
+	cout <<"SERENDIPITY BOOKSELLERS\n";
+		cout <<"Reports Menu\n\n"; 
+
+} 
+ 
+void reports(){
+	//Variable Declarations
+		int choice; //Menu Switch
+
+do{
+			
+			displayRepHeader();
+			displayRepList();
+		//Prompt for input 
+		cin >> choice; 
+
+		//Menu Choice 
+		switch(choice){
+		case 1:
+			//repListing()
+			break; 
+		case 2: 
+			//repWholesale()
+			break; 
+		case 3:
+			//repRetail()
+			break; 
+		case 4:
+			//repQuantity()
+			break; 
+		case 5: 
+			//repCost()
+			break; 
+		case 6: 
+			//repAge(); 
+			break; 
+		case 7:
+			break; //exits loop & returns to main menu
+		default:
+			cout << "Your choice is invalid. Please enter a choice from 1-4.";
+			 cin.get(); // pauses so message is seen 
+
+		}
+		
+		if (choice !=7) {
+			cout <<"\n\nPress Enter to Continue..."; 
+			cin.ignore(); 
+			cin.get(); // pause again before clearing 
+		}
+
+	} while (choice != 7); 
+
+
+}
+
+
+
+
+
+
+
+
+
 
 

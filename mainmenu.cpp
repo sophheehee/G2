@@ -1,12 +1,12 @@
-/******************************************
-* insert proper header here
-*
-*
-*
-********************************************/
+/***************************************************
+* Programmer: Sophia Omar
+* Assignment: G2 -- Serendipity Menus
+* Due Date: 23 September 2025
+* Purpose: Main Menu Driver for Bookseller program
+*****************************************************/
 #include <iostream>
 //#include "invmenu.h"
-//#include "reports.h"
+#include "reports.h"
 using namespace std; 
 
 //Function Prototypes
@@ -31,13 +31,14 @@ int main(){
 		//Menu Choice 
 		switch(choice){
 		case 1:
-			//displayCashierHeader()
+			//cashier()
 			break; 
 		case 2: 
-			//displayInvMenu
+			//invMenu(); 
 			break; 
 		case 3:
-				//displayReportMenu
+			clear(); 
+			reports();
 			break; 
 		case 4:
 				break; 
