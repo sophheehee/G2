@@ -13,12 +13,12 @@ void displayRepList();
 void reports();  
 
 //Function Stubs for menu options
-void repListing(){}
-void repWholesale(){}
-void repRetail(){}
-void repQuantity(){}
-void repCost(){}
-void repAge(){}
+void repListing();
+void repWholesale();
+void repRetail();
+void repQuantity();
+void repCost();
+void repAge();
 
 
 

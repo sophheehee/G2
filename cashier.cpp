@@ -13,7 +13,7 @@ and printing full receipt with calculated subtotal and taxed total
 #include "cashier.h"
 using namespace std;
 
-int main() {
+int cashier() {
 
 	string dte = ""; //user entered date
 	int qty = 0; //number of copies being purchased

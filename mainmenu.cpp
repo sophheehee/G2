@@ -33,7 +33,7 @@ int main(){
 		switch(choice){
 		case 1:
 			clear(); 
-			//cashier();
+			cashier();
 			break; 
 		case 2: 
 			clear(); 
