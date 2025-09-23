@@ -5,12 +5,12 @@
 *
 ********************************************/
 #include <iostream>
-#include "invmenu.h"
-#include "reports.h"
+//#include "invmenu.h"
+//#include "reports.h"
 using namespace std; 
 
 //Function Prototypes
-void displayHeader(); 
+void displayMainHeader(); 
 void displayMainList(); 
 void clear(); 
 
@@ -19,9 +19,17 @@ int main(){
 	//Variable Declarations
 		int choice;  //Switch for menu
 
+	do {
+			
+		//Display Header
+			clear(); 
+			displayMainHeader();
+			displayMainList();
+		//Prompt for input 
+		cin >> choice; 
 
-//note to self, don't forget input validation (no choice outside of range)
-	switch(choice){
+		//Menu Choice 
+		switch(choice){
 		case 1:
 			//displayCashierHeader()
 			break; 
@@ -29,13 +37,24 @@ int main(){
 			//displayInvMenu
 			break; 
 		case 3:
+				//displayReportMenu
 			break; 
+		case 4:
+				break; 
+			//exits loop
 		default:
-			cout << "Your choice is invalid";
-			
+			cout << "Your choice is invalid. Please enter a choice from 1-4.";
+			 cin.get(); // pauses so message is seen 
 
-	}
+		}
+		
+		if (choice !=4) {
+			cout <<"\n\nPress Enter to Continue..."; 
+			cin.ignore(); 
+			cin.get(); // pause again before clearing 
+		}
 
+	} while (choice != 4); 
 
 }
 
@@ -51,9 +70,9 @@ void displayMainList(){
 	cout << "1. Cashier\n"; 
 	cout << "2. Inventory\n"; 
 	cout << "3. Reports\n";
-	cout << "4. Exit\n\n"
-}	cout << "Enter Your Choice (1-4): "; 
-
+	cout << "4. Exit\n\n";
+	cout << "Enter Your Choice (1-4): "; 
+}
 //Clears screen
 void clear(){
 	cout << "\033[H\033[2J";
