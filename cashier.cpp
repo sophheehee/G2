@@ -1,3 +1,4 @@
+//COPY
 /***************************
 NAME: Christian Schoffstoll
 Assignment: G2

@@ -1,3 +1,4 @@
+//COPY
 /*************************************
 Programmer: Christian Schoffstoll 
 Assignment: G2 - Serendipity

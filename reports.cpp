@@ -1,3 +1,4 @@
+//COPY
 /*************************************************
 * Programmer: Sophia Omar
 * Assignment: G2 -- Serendipity Menus
