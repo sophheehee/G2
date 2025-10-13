@@ -48,7 +48,7 @@ do{
 			//addBook()
 			break; 
 		case 3:
-			//editBookl()
+			//editBook()
 			break; 
 		case 4:
 			//deleteBook()
@@ -74,4 +74,24 @@ do{
 }
 
 //****************** LOOK UP BOOK RELATED FUNCTIONS *****************//
-void lookUpBook(){}
+void lookUpBook(){
+	do{
+		//create switch menu
+		switch(choice){
+		case 1:
+			//search by title
+			break; 
+		case 2: 
+			//search by isbn
+			break; 
+		case 3:  //exit loop
+			break; 
+		default: 
+			cout <<"Your choice is invalid. Please enter a choice from 1-3."
+			cin.get(); //pause 
+
+} //dont forget validation here 
+
+} while (choice !=5);
+
+}
