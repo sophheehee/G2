@@ -1,8 +1,7 @@
-//COPY
 /***********************************
 * Programmer: Sophia Omar
-* Assignment: G2 - Serendipity Menu
-* Due Date: 23 September 2025
+* Assignment: G3 - Add & Look Up Book
+* Due Date: 14 October 2025
 * Purpose: Inventory Menu Function 
 *    Definitions
 ************************************/
@@ -73,3 +72,6 @@ do{
 
 	} while (choice != 5); 
 }
+
+//****************** LOOK UP BOOK RELATED FUNCTIONS *****************//
+void lookUpBook(){}

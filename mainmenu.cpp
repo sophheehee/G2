@@ -1,11 +1,11 @@
-//COPY
 /***************************************************
 * Programmer: Sophia Omar
-* Assignment: G2 -- Serendipity Menus
-* Due Date: 23 September 2025
+* Assignment: G3 -- Add & Look Up Book
+* Due Date: 14 October 2025
 * Purpose: Main Menu Driver for Bookseller program
 *****************************************************/
 #include <iostream>
+#include <limits>
 #include "cashier.h"
 #include "invmenu.h"
 #include "reports.h"
@@ -20,7 +20,8 @@ void clear();
 int main(){
 	//Variable Declarations
 		int choice;  //Switch for menu
-
+	
+		
 	do {
 			
 		//Display Header
@@ -83,3 +84,4 @@ void displayMainList(){
 void clear(){
 	cout << "\033[H\033[2J";
 }
+
