@@ -65,10 +65,11 @@ static void printOneBook(const bookInfo& b, size_t indOne){
 }
 
 /*******************Main driver menu ********/
-void lookUpBook(vector<bookInfo>& database){
+void lookUpBook(std::vector<bookInfo>& database){
 		int choice; 
  	do{
 		//Display header
+		clear(); 
 		displaySearchHeader(); 
 		displaySearchBy(); 
 		//get choice
@@ -112,7 +113,8 @@ void lookUpBook(vector<bookInfo>& database){
 				} 
 
 			if(choice !=3){
-				pauseEnter(); 
+				pauseEnter();
+				clear();  
 			}
 
 	} while (choice !=3);
