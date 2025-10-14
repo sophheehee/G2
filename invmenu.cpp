@@ -12,7 +12,7 @@
 #include "bookInfo.h"
 #include "lookUp.h"
 #include "utilities.h"
-#include "mainmenu.cpp"
+#include "addBook.h"
 using namespace std; 
 
 
@@ -51,7 +51,8 @@ do{
 			lookUpBook(database);
 			break; 
 		case 2: 
-			//addBook(database,20);
+			clear();
+			addBook(database,20);
 			break; 
 		case 3:
 			cout << "Edit Function Not Available";

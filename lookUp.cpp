@@ -65,7 +65,7 @@ static void printOneBook(const bookInfo& b, size_t indOne){
 }
 
 /*******************Main driver menu ********/
-void lookUpBook(vector<bookInfo>& database){
+void lookUpBook(const vector<bookInfo>& database){
 		int choice; 
  	do{
 		//Display header

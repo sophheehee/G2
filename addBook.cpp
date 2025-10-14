@@ -8,6 +8,7 @@ FOR: Adding books to database
 #include "addBook.h"
 #include "bookInfo.h"
 #include "lookUp.h"
+#include "utilities.h"
 #include <cctype>
 #include <vector>
 void addBookPrint(const bookInfo& b, const std::vector<bookInfo>& v) ;
@@ -43,35 +44,35 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 
 				std::getline(std::cin, data_s); //takes user input for title info
 				blank.setTitle(data_s); //saves title info
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '2':
 
 				std::getline(std::cin, data_s); //takes user input for ISBN info
 				blank.setISBN(data_s); //saves ISBN info
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '3':
 
 				std::getline(std::cin, data_s); //takes user input for author info
 				blank.setAuthor(data_s); //save author info
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '4':
 
 				std::getline(std::cin, data_s); //takes user input for publisher info
 				blank.setPublisher(data_s); //saves publisher info
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '5':
 
 				std::getline(std::cin, data_s); //takes user input for date info
 				blank.setDate(data_s); //saves date info
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '6':
@@ -79,7 +80,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 				std::cin >> data_i; //takes user input for quantity info
 				blank.setQty(data_i); //saves quantity info
 				std::cin.ignore();
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '7':
@@ -87,7 +88,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 				std::cin >> data_f; //takes user input for wholesale cost info
 				blank.setWholeCost(data_f); //saves wholesale cost info
 				std::cin.ignore();
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '8':
@@ -95,7 +96,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 				std::cin >> data_f; //takes user input for retail cost info
 				blank.setRetailCost(data_f); //saves retail cost info
 				std::cin.ignore();
-				std::cout << "\033[H\033[2J"; //clear screen
+				clear(); //clear screen
 				break;
 
 			case '9':
@@ -109,7 +110,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 				blank.setQty(0);
 				blank.setWholeCost(0.0);
 				blank.setRetailCost(0.0);
-				std::cout << "\033[H\033[2J";
+				clear();
 				break;
 
 			case '0':
@@ -128,7 +129,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 					invMenu(inventory);
 				}
 
-				std::cout << "\033[H\033[2J";
+				clear();
 
 				break;
 
@@ -137,11 +138,13 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 				std::cout << "Invalid choice (1-0), press ENTER:"; //freezes screen and instructs user
 				std::cin.ignore();
 				std::cin.ignore();
-				std::cout << "\033[H\033[2J";
+				clear();
 				break;
 			}
 
 			if (inventory.size() == 21) { //Force backout to inventory menu when database is full
+
+				inventory.push_back(blank);
 
 				std::cout << "Database is full, saving entered data.\n\n";
 
