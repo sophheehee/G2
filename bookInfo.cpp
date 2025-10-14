@@ -9,9 +9,9 @@
 		author = "NOT SET";
 		publisher = "NOT SET";
 		date = "NOT SET";
-		int qty = 0;
-		float wholesale_cost = 0;	
-		float rtail_cost = 0;
+		qty = 0;
+		whole_cost = 0.0;
+		retail_cost = 0.0;
 
 	}
 
@@ -107,3 +107,4 @@
 
 		return retail_cost;
 	}
+
