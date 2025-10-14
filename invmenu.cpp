@@ -6,12 +6,32 @@
 *    Definitions
 ************************************/
 #include <iostream>
+#include <limits>
 #include "invmenu.h"
+#include "bookInfo.h"
 using namespace std; 
 
 
-
-//Function Definitions for Menu and Header (Sophie)
+/******************** INV MENU FUNCTIONS *************************/
+//Function Definitions for Menu and Header 
+void clearInvScreen(){
+	cout << "\033[H\033[2J";
+}
+//  throws error for non-int input (same as in main)
+void checkAlphaInv(int& choice){
+	while(true){
+		cin >> choice; 
+	if (cin.fail()){
+		cin.clear(); 
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout <<"\nInvalid Input! Please enter a number. \n\n";
+		continue; 
+		
+	}
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	break; 
+}
+}
 void displayInvList(){
 	cout <<"What would you like to do?\n";
 	cout << "1. Search for a Book\n"; 
@@ -37,7 +57,7 @@ do{
 			displayInvHeader();
 			displayInvList();
 		//Prompt for input 
-		cin >> choice; 
+		checkAlphaInv(choice); 
 
 		//Menu Choice 
 		switch(choice){
@@ -65,33 +85,67 @@ do{
 		
 		if (choice !=5) {
 			cout <<"\n\nPress Enter to Continue..."; 
-			cin.ignore(); 
 			cin.get(); // pause again before clearing 
-			cout << "\033[H\033[2J";
+			//cin.ignore();
+			clearInvScreen(); 
 		}
 
 	} while (choice != 5); 
 }
 
+
+
+
 //****************** LOOK UP BOOK RELATED FUNCTIONS *****************//
-//**void lookUpBook(){
-//	do{
-//		//create switch menu
-//		switch(choice){
-//		case 1:
+void displaySearchBy(){
+	cout <<"What would you like to do?\n";
+	cout << "1. Search by Title\n"; 
+	cout << "2. Search by ISBN\n"; 
+	cout << "3. Return to Inventory Menu\n";
+	cout << "Enter Your Choice (1-3): "; 
+
+}
+void displaySearchHeader(){
+		cout <<"SERENDIPITY BOOKSELLERS\n";
+		cout <<"Inventory Search Menu\n\n"; 
+
+}
+//void searchTitle(); 
+//void searchISBN(); 
+
+void lookUpBook(){
+		int choice; 
+ 	do{
+		//Display header
+		displaySearchHeader(); 
+		displaySearchBy(); 
+		//get choice
+		checkAlphaInv(choice); 
+
+	//create switch menu
+		switch(choice){
+		case 1:
 			//search by title
-//			break; 
-//		case 2: 
+			//searchTitle();
+			break; 
+		case 2: 
 			//search by isbn
-//			break; 
-//		case 3:  //exit loop
-//			break; 
-//		default: 
-//			cout <<"Your choice is invalid. Please enter a choice from 1-3."
-//			cin.get(); //pause 
+			//searchISBN(); 
+			break; 
+		case 3:  //exit loop
+			break; 
+		default: 
+			cout <<"Your choice is invalid. Please enter a choice from 1-3.";
+			cin.get(); //pause 
 
-//} //dont forget validation here 
+				} 
+			if(choice !=3){
+				cout <<"\n\nPress Enter to Continue..."; 
+				//cin.ignore(); 
+				cin.get(); 
+			}
 
-//} while (choice !=5);
+	} while (choice !=3);
 
-//}//
+}
+
