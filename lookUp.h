@@ -10,7 +10,7 @@
 #include <vector>
 #include "bookInfo.h"
 //Function Prototypes
-void lookUpBook(std::vector<bookInfo>& database); 
+void lookUpBook(const std::vector<bookInfo>& database); 
 
 
 #endif

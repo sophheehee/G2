@@ -9,16 +9,11 @@ FOR: Adding books to database
 #include "bookInfo.h"
 #include "lookUp.h"
 #include <cctype>
+#include <vector>
 void addBookPrint(const bookInfo& b, const std::vector<bookInfo>& v) ;
 
-void addBook(vector<bookInfo>& inventory, size_t capacity) {
+void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 
-
-
-	
-
-		std::vector<bookInfo> database; //main database for all book information
-		std::vector<bookInfo> pending; //
 		char choice = ' '; //user menu choice
 		std::string data_s = " "; //user entered data for string values
 		int data_i = 0; //user entered data for integer values
@@ -30,13 +25,13 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 		blank.setWholeCost(0.0);
 		blank.setRetailCost(0.0);
 
-		database.push_back(blank);
+		inventory.push_back(blank);
 
 		char esc = ' '; //allows user choice to leave to main menu or stay
 
-		while (database.size() < 21) { //prevents bookcout from increasing past 20
+		while (inventory.size() < 21) { //prevents bookcout from increasing past 20
 
-			addBookPrint(blank, database); //function call
+			addBookPrint(blank, inventory); //function call
 
 			std::cin >> choice; //reads user input for menu
 
@@ -105,7 +100,7 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 
 			case '9':
 
-				database.push_back(blank); //saves data to database and resets displayed pending values
+				inventory.push_back(blank); //saves data to database and resets displayed pending values
 				blank.setTitle("NOT SET");
 				blank.setISBN("NOT SET");
 				blank.setAuthor("NOT SET");
@@ -130,7 +125,7 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 
 				if (esc == 'y') {
 
-					invMenu();
+					invMenu(inventory);
 				}
 
 				std::cout << "\033[H\033[2J";
@@ -146,20 +141,18 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 				break;
 			}
 
-			if (database.size() == 21) { //Force backout to inventory menu when database is full
+			if (inventory.size() == 21) { //Force backout to inventory menu when database is full
 
 				std::cout << "Database is full, saving entered data.\n\n";
 
 				std::cin.ignore();
 				std::cin.ignore();
 
-				invMenu();
+				invMenu(inventory);
 
 			}
 
 		};
-
-	
 
 }
 
