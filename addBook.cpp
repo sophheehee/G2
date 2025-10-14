@@ -29,7 +29,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 
 		char esc = ' '; //allows user choice to leave to main menu or stay
 
-		while (database.size() < 21) { //prevents bookcout from increasing past 20
+		while (inventory.size() < 21) { //prevents bookcout from increasing past 20
 
 			addBookPrint(blank, inventory); //function call
 
@@ -125,7 +125,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 
 				if (esc == 'y') {
 
-					invMenu();
+					invMenu(inventory);
 				}
 
 				std::cout << "\033[H\033[2J";
@@ -148,7 +148,7 @@ void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 				std::cin.ignore();
 				std::cin.ignore();
 
-				invMenu();
+				invMenu(inventory);
 
 			}
 
