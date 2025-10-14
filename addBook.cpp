@@ -8,10 +8,10 @@ FOR: Adding books to database
 
 #include "bookInfo.h"
 #include <cctype>
-
+#include "invmenu.h"
 void addBookPrint(const bookInfo& b, const std::vector<bookInfo>& v) ;
 
-int main() {
+int addBook() {
 
 
 
@@ -130,7 +130,7 @@ int main() {
 
 				if (esc == 'y') {
 
-					invMenu()
+					invMenu();
 				}
 
 				std::cout << "\033[H\033[2J";
@@ -154,7 +154,7 @@ int main() {
 				std::cin.ignore();
 				std::cin.ignore();
 
-				invMenu()
+				invMenu();
 
 			}
 

@@ -1,4 +1,4 @@
-//COPY
+
 /*************************************
 Programmer: Christian Schoffstoll 
 Assignment: G2 - Serendipity
@@ -8,6 +8,7 @@ Purpose: Cashier Function Stubs
 #ifndef CASHIER_H
 #define CASHIER_H
 
+#include <string> // i threw this in here bc compiler said to
 
 //Function Prototype for Cashier Main
 int cashier(); 
