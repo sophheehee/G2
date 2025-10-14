@@ -9,9 +9,10 @@ FOR: Adding books to database
 #include "bookInfo.h"
 #include "lookUp.h"
 #include <cctype>
+#include <vector>
 void addBookPrint(const bookInfo& b, const std::vector<bookInfo>& v) ;
 
-void addBook(vector<bookInfo>& inventory, size_t capacity) {
+void addBook(std::vector<bookInfo>& inventory, std::size_t capacity) {
 
 		char choice = ' '; //user menu choice
 		std::string data_s = " "; //user entered data for string values
@@ -24,13 +25,13 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 		blank.setWholeCost(0.0);
 		blank.setRetailCost(0.0);
 
-		database.push_back(blank);
+		inventory.push_back(blank);
 
 		char esc = ' '; //allows user choice to leave to main menu or stay
 
 		while (database.size() < 21) { //prevents bookcout from increasing past 20
 
-			addBookPrint(blank, database); //function call
+			addBookPrint(blank, inventory); //function call
 
 			std::cin >> choice; //reads user input for menu
 
