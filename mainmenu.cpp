@@ -15,7 +15,7 @@ using namespace std;
 void displayMainHeader(); 
 void displayMainList(); 
 void clear(); 
-
+void checkAlpha(int& choice); 
 
 int main(){
 	//Variable Declarations
@@ -28,14 +28,13 @@ int main(){
 			clear(); 
 			displayMainHeader();
 			displayMainList();
-		//Prompt for input 
-		cin >> choice; 
+		//Prompt for input and validate for int
+		checkAlpha(choice); 
 
 		//Menu Choice 
 		switch(choice){
 		case 1:
-			clear(); 
-			cin.ignore();  
+			clear();   
 			cashier();
 			break; 
 		case 2: 
@@ -80,8 +79,23 @@ void displayMainList(){
 	cout << "4. Exit\n\n";
 	cout << "Enter Your Choice (1-4): "; 
 }
-//Clears screen
+//Clears screeen
 void clear(){
 	cout << "\033[H\033[2J";
 }
 
+//  throws error for non-int input
+void checkAlpha(int& choice){
+	while(true){
+		cin >> choice; 
+	if (cin.fail()){
+		cin.clear(); 
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout <<"\nInvalid Input! Please enter a choice 1-4. \n\n";
+		continue; 
+		
+	}
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	break; 
+}
+}

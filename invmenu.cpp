@@ -74,24 +74,24 @@ do{
 }
 
 //****************** LOOK UP BOOK RELATED FUNCTIONS *****************//
-void lookUpBook(){
-	do{
-		//create switch menu
-		switch(choice){
-		case 1:
+//**void lookUpBook(){
+//	do{
+//		//create switch menu
+//		switch(choice){
+//		case 1:
 			//search by title
-			break; 
-		case 2: 
+//			break; 
+//		case 2: 
 			//search by isbn
-			break; 
-		case 3:  //exit loop
-			break; 
-		default: 
-			cout <<"Your choice is invalid. Please enter a choice from 1-3."
-			cin.get(); //pause 
+//			break; 
+//		case 3:  //exit loop
+//			break; 
+//		default: 
+//			cout <<"Your choice is invalid. Please enter a choice from 1-3."
+//			cin.get(); //pause 
 
-} //dont forget validation here 
+//} //dont forget validation here 
 
-} while (choice !=5);
+//} while (choice !=5);
 
-}
+//}//
