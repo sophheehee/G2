@@ -20,10 +20,11 @@ class bookInfo {
 
 	public:
 
-		/*********** CONSTRUCTORS ***********/
+		/*********** CONSTRUCTORS & DESTRUCTORS ***********/
 
 		bookInfo();
 
+		~bookInfo(); 
 		/*********** SETTERS ***********/
 
 

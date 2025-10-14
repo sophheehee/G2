@@ -2,7 +2,8 @@
 * look up book header
 *
 ********************************/
-
+#ifndef LOOKUP_H
+#define LOOKUP_H
 
 //Function Prototypes
 
@@ -13,3 +14,4 @@ void searchISBN();
 void lookUpBook(); //main function in there
 
 
+#endif

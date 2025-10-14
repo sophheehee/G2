@@ -10,6 +10,7 @@
 #include "invmenu.h"
 #include "reports.h"
 #include "bookInfo.h"
+#include "lookUp.h"
 using namespace std; 
 
 //Function Prototypes

@@ -5,13 +5,13 @@ DUE: 10/14/25
 FOR: Adding books to database
 */
 
-
+#include "addBook.h"
 #include "bookInfo.h"
+#include "lookUp.h"
 #include <cctype>
-#include "invmenu.h"
 void addBookPrint(const bookInfo& b, const std::vector<bookInfo>& v) ;
 
-int addBook() {
+void addBook(vector<bookInfo>& inventory, size_t capacity) {
 
 
 
