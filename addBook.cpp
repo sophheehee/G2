@@ -142,12 +142,11 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 				std::cout << "Invalid choice (1-0), press ENTER:"; //freezes screen and instructs user
 				std::cin.ignore();
 				std::cin.ignore();
-				std::cout << "\033[H\033[2J"; //clear screen
+				std::cout << "\033[H\033[2J";
 				break;
-
 			}
 
-			if (database.size() == 20) { //Force backout to inventory menu when database is full
+			if (database.size() == 21) { //Force backout to inventory menu when database is full
 
 				std::cout << "Database is full, saving entered data.\n\n";
 
