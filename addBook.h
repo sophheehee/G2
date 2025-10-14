@@ -1,11 +1,9 @@
-/************
-*
-*
-* had to add a header file bc i couldnt use the vector
-*
-*
-**************/
-
+/***************************************************
+* Programmer: Sophia Omar
+* Assignment: G3 -- Add & Look Up Book
+* Due Date: 14 October 2025
+* Purpose: Header File for addBook Function
+*****************************************************/
 
 #ifndef ADDBOOK_H
 #define ADDBOOK_H
@@ -14,7 +12,7 @@
 #include "bookInfo.h" 
 
 
-// Function Def for addBook so it can be externally accessed
+// Function Def for addBook 
 void addBook(std::vector<bookInfo>& inventory, std::size_t capacity = 20); 
 
 

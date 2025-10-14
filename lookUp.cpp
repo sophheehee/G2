@@ -8,6 +8,7 @@
 #include <vector> 
 #include "invmenu.h"
 #include "bookInfo.h"
+#include "utilities.h"
 using namespace std; 
 
 //Header Functions 

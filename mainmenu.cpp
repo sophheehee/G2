@@ -20,8 +20,12 @@ void clear();
 void checkAlpha(int& choice); 
 
 int main(){
-	//Variable Declarations
+	//Variable & Vector Declarations
+		vector<bookInfo> database; 
+		database.reserve(20); 
+	
 		int choice;  //Switch for menu
+		
 	
 		
 	do {
