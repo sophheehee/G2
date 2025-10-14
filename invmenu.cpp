@@ -7,8 +7,10 @@
 ************************************/
 #include <iostream>
 #include <limits>
+#include <vector> 
 #include "invmenu.h"
 #include "bookInfo.h"
+//#include "addBook.cpp"
 using namespace std; 
 
 
@@ -110,7 +112,13 @@ void displaySearchHeader(){
 		cout <<"Inventory Search Menu\n\n"; 
 
 }
-//void searchTitle(); 
+//SEARCH BY TITLE
+//void searchTitle(){
+
+
+//} 
+
+//SEARCH BY ISBN
 //void searchISBN(); 
 
 void lookUpBook(){
