@@ -32,7 +32,7 @@ int main() {
 
 		database.push_back(blank);
 
-
+		char esc = ' '; //allows user choice to leave to main menu or stay
 
 		while (database.size() < 21) { //prevents bookcout from increasing past 20
 
@@ -119,8 +119,6 @@ int main() {
 
 			case '0':
 
-				char esc = ' '; //allows user choice to leave to main menu or stay
-
 				while (esc != 'y' && esc != 'n') {
 
 					std::cout << "Return to main menu? (Y/N): ";
@@ -132,8 +130,10 @@ int main() {
 
 				if (esc == 'y') {
 
-					//invMenu()
+					invMenu()
 				}
+
+				std::cout << "\033[H\033[2J";
 
 				break;
 
@@ -154,8 +154,7 @@ int main() {
 				std::cin.ignore();
 				std::cin.ignore();
 
-				//invMenu()
-				break;
+				invMenu()
 
 			}
 
@@ -167,11 +166,11 @@ int main() {
 
 void addBookPrint(const bookInfo& blank, const std::vector<bookInfo> &v) {
 
-	std::string title = blank.getTitle();
+	std::string title = blank.getTitle(); //creates local variable for title truncation
 
-	if (title.length() > 38) {
+	if (title.length() > 38) { //maximum length of title being 38 characters
 
-		title = title.substr(0, 35) + "...";
+		title = title.substr(0, 35) + "..."; //removes trailing 3 characters for ...
 	}
 
 	std::cout << std::setfill('-') << std::setw(120);
