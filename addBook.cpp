@@ -13,12 +13,6 @@ void addBookPrint(const bookInfo& b, const std::vector<bookInfo>& v) ;
 
 void addBook(vector<bookInfo>& inventory, size_t capacity) {
 
-
-
-	
-
-		std::vector<bookInfo> database; //main database for all book information
-		std::vector<bookInfo> pending; //
 		char choice = ' '; //user menu choice
 		std::string data_s = " "; //user entered data for string values
 		int data_i = 0; //user entered data for integer values
@@ -105,7 +99,7 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 
 			case '9':
 
-				database.push_back(blank); //saves data to database and resets displayed pending values
+				inventory.push_back(blank); //saves data to database and resets displayed pending values
 				blank.setTitle("NOT SET");
 				blank.setISBN("NOT SET");
 				blank.setAuthor("NOT SET");
@@ -146,7 +140,7 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 				break;
 			}
 
-			if (database.size() == 21) { //Force backout to inventory menu when database is full
+			if (inventory.size() == 21) { //Force backout to inventory menu when database is full
 
 				std::cout << "Database is full, saving entered data.\n\n";
 
@@ -158,8 +152,6 @@ void addBook(vector<bookInfo>& inventory, size_t capacity) {
 			}
 
 		};
-
-	
 
 }
 
