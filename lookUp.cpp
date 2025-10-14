@@ -69,6 +69,7 @@ void lookUpBook(const vector<bookInfo>& database){
 		int choice; 
  	do{
 		//Display header
+		clear(); 
 		displaySearchHeader(); 
 		displaySearchBy(); 
 		//get choice
@@ -112,7 +113,8 @@ void lookUpBook(const vector<bookInfo>& database){
 				} 
 
 			if(choice !=3){
-				pauseEnter(); 
+				pauseEnter();
+				clear();  
 			}
 
 	} while (choice !=3);

@@ -38,7 +38,7 @@ void invMenu(std::vector<bookInfo>& database){
 		int choice; //Menu Switch
 
 do{
-			
+			clear(); 
 			displayInvHeader();
 			displayInvList();
 		//Prompt for input 
@@ -47,7 +47,7 @@ do{
 		//Menu Choice 
 		switch(choice){
 		case 1:
-			clear(); 
+			
 			lookUpBook(database);
 			break; 
 		case 2: 
