@@ -11,13 +11,14 @@
 #include "reports.h"
 #include "bookInfo.h"
 #include "lookUp.h"
+#include "utilities.h"
 using namespace std; 
 
 //Function Prototypes
 void displayMainHeader(); 
 void displayMainList(); 
 void clear(); 
-void checkAlpha(int& choice); 
+
 
 int main(){
 	//Variable & Vector Declarations
@@ -35,7 +36,7 @@ int main(){
 			displayMainHeader();
 			displayMainList();
 		//Prompt for input and validate for int
-		checkAlpha(choice); 
+		choice = readChoice("Enter Choice (1-4):", 1, 4); 
 
 		//Menu Choice 
 		switch(choice){
@@ -45,7 +46,7 @@ int main(){
 			break; 
 		case 2: 
 			clear(); 
-			invMenu(); 
+			invMenu(database); 
 			break; 
 		case 3:
 			clear(); 
@@ -54,16 +55,10 @@ int main(){
 		case 4:
 				break; 
 			//exits loop
-		default:
-			cout << "Your choice is invalid. Please enter a choice from 1-4.";
-			 cin.get(); // pauses so message is seen 
-
 		}
 		
 		if (choice !=4) {
-			cout <<"\n\nPress Enter to Continue..."; 
-			cin.ignore(); 
-			cin.get(); // pause again before clearing 
+			pauseEnter(); 
 		}
 
 	} while (choice != 4); 
@@ -83,25 +78,5 @@ void displayMainList(){
 	cout << "2. Inventory\n"; 
 	cout << "3. Reports\n";
 	cout << "4. Exit\n\n";
-	cout << "Enter Your Choice (1-4): "; 
-}
-//Clears screeen
-void clear(){
-	cout << "\033[H\033[2J";
 }
 
-//  throws error for non-int input
-void checkAlpha(int& choice){
-	while(true){
-		cin >> choice; 
-	if (cin.fail()){
-		cin.clear(); 
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout <<"\nInvalid Input! Please enter a choice 1-4. \n\n";
-		continue; 
-		
-	}
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	break; 
-}
-}

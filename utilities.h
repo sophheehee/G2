@@ -8,19 +8,19 @@
 #define UTILITIES_H
 
 
-#include string
+#include <string>
 
 //Screen Related
-void clearScreen(); 
+void clear(); 
 void pauseEnter(); 
 
 
 //Input validation and stuff
-bool readInt(const char* prompt, int& out); 
-bool readFloat(const char* prompt, float& out); 
 int readChoice(const std::string& prompt, int min, int max); 
+
+//String Tools
 std::string readLine(const char* prompt); 
-std::string toLowerCopy(std::string s); 
+std::string toLowerString(std::string s); 
 
 
 #endif

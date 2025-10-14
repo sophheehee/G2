@@ -24,7 +24,7 @@ class bookInfo {
 
 		bookInfo();
 
-		~bookInfo(); 
+		 
 		/*********** SETTERS ***********/
 
 

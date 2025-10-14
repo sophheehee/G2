@@ -1,8 +1,9 @@
-/*************
-*
-* functions for lookUpBook function
-*
-****************/
+/***************************************************
+* Programmer: Sophia Omar
+* Assignment: G3 -- Add & Look Up Book
+* Due Date: 14 October 2025
+* Purpose: Look Up Book Function Implementation
+*****************************************************/
 #include <iostream>
 #include <limits>
 #include <vector> 
@@ -17,7 +18,6 @@ void displaySearchBy(){
 	cout << "1. Search by Title\n"; 
 	cout << "2. Search by ISBN\n"; 
 	cout << "3. Return to Inventory Menu\n";
-	cout << "Enter Your Choice (1-3): "; 
 
 }
 void displaySearchHeader(){
@@ -26,48 +26,89 @@ void displaySearchHeader(){
 
 }
 
-//Search Functions 
-//SEARCH BY TITLE
-//void searchTitle(){
+/*************************Search Functions *****************/ 
+//SEARCH BY TITLE (case insensitive & substring) 
+static vector<size_t> findAllTitles(const vector<bookInfo>& database, const string& title){
+	vector<size_t> index; 
+	string key = toLowerString(title); 
+	for(size_t i=0; i < database.size(); ++i)
+		if(toLowerString(database[i].getTitle()).find(key) != string::npos)
+			index.push_back(i);
+	return index; 
+} 
 
-
-//} 
 
 //SEARCH BY ISBN
-//void searchISBN(); 
+static int searchISBN(const vector<bookInfo>& database, const string& isbn){
+	for(size_t i =0; i <database.size(); ++1){
+		if(database[i].getISBN() ==isbn){
+			return(int)i; }
+	} return-1
+} 
 
 
-//Main driver 
-void lookUpBook(){
+/**************************Print Functinos*************************/
+
+static void printOneBook(const bookInfo& b, size_t indOne){
+		cout << indOne << "." <<b.getTitle()
+			 <<"\n   ISBN: "      << b.getISBN()
+         << "\n   Author: "    << b.getAuthor()
+         << "\n   Publisher: " << b.getPublisher()
+         << "\n   Qty: "       << b.getQty()
+         << "\n   Whole: $"    << b.getWholeCost()
+         << "\n   Retail: $"   << b.getRetailCost()
+         << "\n   Date: "      << b.getDate()
+         << "\n------------------------------------------------------------\n";
+
+
+}
+
+/*******************Main driver menu ********/
+void lookUpBook(vector<bookInfo>& database){
 		int choice; 
  	do{
 		//Display header
 		displaySearchHeader(); 
 		displaySearchBy(); 
 		//get choice
-		checkAlphaInv(choice); 
+		choice = readChoice("Enter Choice (1-3):",1,3); 
 
 	//create switch menu
 		switch(choice){
 		case 1:
-			//search by title
-			//searchTitle();
+			clear(); 
+			string key = readLine("Enter Title to Search:");
+			auto matches = findAllTitles(database, key); 
+			if(matches.empty()){
+				cout <<"\nNo books found\n";}
+			else{
+				cout <<"\nFound" <<matches.size() <<"matching book(s):\n";
+				cout <<"------------------------------------------------------------\n";
+				for(size_t i = 0; i < matches.size(); ++i){
+					printOneBook(database[matches[i]], i+1); 
+				}
+			}
+			pauseEnter(); 
 			break; 
 		case 2: 
 			//search by isbn
-			//searchISBN(); 
+			clear(); 
+			string key = readLine("Enter ISBN: "); 
+			int index = searchISBN(database, key); 
+			if(index == -1) {
+				cout<< "\n No book with that ISBN. \n"; }
+			else{
+			cout <<"\nMatch:\n------------------------------------------------------------\n";
+			printOne(database[(size_t)idx], 1);
+			}
+			pauseEnter(); 
 			break; 
 		case 3:  //exit loop
 			break; 
-		default: 
-			cout <<"Your choice is invalid. Please enter a choice from 1-3.";
-			cin.get(); //pause 
 
 				} 
 			if(choice !=3){
-				cout <<"\n\nPress Enter to Continue..."; 
-				//cin.ignore(); 
-				cin.get(); 
+				pauseEnter(); 
 			}
 
 	} while (choice !=3);

@@ -9,17 +9,10 @@
 #ifndef INVMENU_H
 #define INVMENU_H
 
-//Inventory Menu Function Stubs
-void displayInvHeader(); 
-void displayInvList(); 
-void invMenu(); 
+#include <vector> 
+#include "bookInfo.h"
+//Inventory Menu Function prototype
 
-//Function stubs 
-void lookUpBook();
-void addBook();
-void editBook();
-void deleteBook();
-
-
+void invMenu(std::vector<bookInfo>& database); 
 
 #endif

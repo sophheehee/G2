@@ -12,29 +12,12 @@
 #include "bookInfo.h"
 //#include "addBook.cpp"
 #include "lookUp.h"
+#include "utilities.h"
 using namespace std; 
 
 
 /******************** INV MENU FUNCTIONS *************************/
 //Function Definitions for Menu and Header 
-void clearInvScreen(){
-	cout << "\033[H\033[2J";
-}
-//  throws error for non-int input (same as in main)
-void checkAlphaInv(int& choice){
-	while(true){
-		cin >> choice; 
-	if (cin.fail()){
-		cin.clear(); 
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout <<"\nInvalid Input! Please enter a number. \n\n";
-		continue; 
-		
-	}
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	break; 
-}
-}
 void displayInvList(){
 	cout <<"What would you like to do?\n";
 	cout << "1. Search for a Book\n"; 
@@ -42,7 +25,6 @@ void displayInvList(){
 	cout << "3. Edit a Book\n";
 	cout << "4. Delete a Book\n";
 	cout << "5. Return to Main Menu\n\n"; 
-	cout << "Enter Your Choice (1-5): "; 
 
 }
 void displayInvHeader(){
@@ -60,37 +42,32 @@ do{
 			displayInvHeader();
 			displayInvList();
 		//Prompt for input 
-		checkAlphaInv(choice); 
+		choice = readChoice("Enter Choice (1-5):", 1, 5); 
 
 		//Menu Choice 
 		switch(choice){
 		case 1:
-			//lookUpBook()
+			lookUpBook(database);
 			break; 
 		case 2: 
-			//addBook()
+			//addBook(database,20);
 			break; 
 		case 3:
-			//editBook()
+			cout << "Edit Function Not Available";
 			break; 
 		case 4:
-			//deleteBook()
+			cout << "Delete Function Not Available"; 
 			break; 
 		case 5: 
 			//Exit Menu
-			break; 
-		
-		default:
-			cout << "Your choice is invalid. Please enter a choice from 1-5.";
-			 cin.get(); // pauses so message is seen 
-
+			break;
 		}
 		
 		if (choice !=5) {
 			cout <<"\n\nPress Enter to Continue..."; 
 			cin.get(); // pause again before clearing 
 			//cin.ignore();
-			clearInvScreen(); 
+			clear(); 
 		}
 
 	} while (choice != 5); 
