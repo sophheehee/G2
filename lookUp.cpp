@@ -28,22 +28,23 @@ void displaySearchHeader(){
 
 /*************************Search Functions *****************/ 
 //SEARCH BY TITLE (case insensitive & substring) 
-static vector<size_t> findAllTitles(const vector<bookInfo>& database, const string& title){
-	vector<size_t> index; 
-	string key = toLowerString(title); 
-	for(size_t i=0; i < database.size(); ++i)
-		if(toLowerString(database[i].getTitle()).find(key) != string::npos)
-			index.push_back(i);
-	return index; 
-} 
-
+static std::vector<size_t> findAllTitles(const std::vector<bookInfo>& database, const std::string& keyRaw) {
+    std::vector<size_t> result;
+    std::string key = toLowerString(keyRaw);
+    for (size_t i = 0; i < database.size(); ++i) {
+        if (toLowerString(database[i].getTitle()).find(key) != std::string::npos) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
 
 //SEARCH BY ISBN
 static int searchISBN(const vector<bookInfo>& database, const string& isbn){
-	for(size_t i =0; i <database.size(); ++1){
+	for(size_t i =0; i <database.size(); ++i){
 		if(database[i].getISBN() ==isbn){
 			return(int)i; }
-	} return-1
+	} return-1;
 } 
 
 
@@ -75,7 +76,7 @@ void lookUpBook(vector<bookInfo>& database){
 
 	//create switch menu
 		switch(choice){
-		case 1:
+		case 1:{
 			clear(); 
 			string key = readLine("Enter Title to Search:");
 			auto matches = findAllTitles(database, key); 
@@ -88,9 +89,10 @@ void lookUpBook(vector<bookInfo>& database){
 					printOneBook(database[matches[i]], i+1); 
 				}
 			}
-			pauseEnter(); 
+			 
 			break; 
-		case 2: 
+		}
+		case 2: {
 			//search by isbn
 			clear(); 
 			string key = readLine("Enter ISBN: "); 
@@ -99,14 +101,16 @@ void lookUpBook(vector<bookInfo>& database){
 				cout<< "\n No book with that ISBN. \n"; }
 			else{
 			cout <<"\nMatch:\n------------------------------------------------------------\n";
-			printOne(database[(size_t)idx], 1);
+			printOneBook(database[(size_t)index], 1);
 			}
-			pauseEnter(); 
+			 
 			break; 
+			}
 		case 3:  //exit loop
 			break; 
 
 				} 
+
 			if(choice !=3){
 				pauseEnter(); 
 			}

@@ -18,8 +18,8 @@ void clear(){ //Clears Screen
 }
 void pauseEnter(){ //Pauses before continuing loop
 	cout <<"\nPress Enter to Continue...";
-	cin.ignore(); 
-	cin.get(); 
+		string x; 
+		getline(cin, x); //this is safer than cin.get supposedly
 }
 
 /************ Validation Tools ****************/

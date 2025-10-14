@@ -10,9 +10,9 @@
 #include <vector> 
 #include "invmenu.h"
 #include "bookInfo.h"
-//#include "addBook.cpp"
 #include "lookUp.h"
 #include "utilities.h"
+//#include "addBook.h"
 using namespace std; 
 
 
@@ -33,7 +33,7 @@ void displayInvHeader(){
 
 } 
  
-void invMenu(){
+void invMenu(std::vector<bookInfo>& database){
 	//Variable Declarations
 		int choice; //Menu Switch
 
@@ -47,6 +47,7 @@ do{
 		//Menu Choice 
 		switch(choice){
 		case 1:
+			clear(); 
 			lookUpBook(database);
 			break; 
 		case 2: 
@@ -63,12 +64,6 @@ do{
 			break;
 		}
 		
-		if (choice !=5) {
-			cout <<"\n\nPress Enter to Continue..."; 
-			cin.get(); // pause again before clearing 
-			//cin.ignore();
-			clear(); 
-		}
 
 	} while (choice != 5); 
 }
